@@ -12,10 +12,6 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# ==========================================================
-# MySQL Database Configuration
-# ==========================================================
-
 USERNAME = "root"
 PASSWORD = "Revanth@123"          
 HOST = "localhost"
