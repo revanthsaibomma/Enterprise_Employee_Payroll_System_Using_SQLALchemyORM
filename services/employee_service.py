@@ -25,11 +25,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# ==========================================================
-# Add Employee
-# ==========================================================
-
 def add_employee():
 
     session = get_session()
@@ -75,11 +70,6 @@ def add_employee():
 
         session.close()
 
-
-# ==========================================================
-# Search Employee
-# ==========================================================
-
 def search_employee():
 
     session = get_session()
@@ -111,11 +101,6 @@ def search_employee():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Update Employee
-# ==========================================================
 
 def update_employee():
 
@@ -154,11 +139,6 @@ def update_employee():
 
         session.close()
 
-
-# ==========================================================
-# Delete Employee
-# ==========================================================
-
 def delete_employee():
 
     session = get_session()
@@ -188,11 +168,6 @@ def delete_employee():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Display All Employees
-# ==========================================================
 
 def display_all_employees():
 

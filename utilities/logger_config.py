@@ -2,14 +2,11 @@ import os
 import logging
 from datetime import datetime
 
-# Create logs folder if it doesn't exist
 LOG_DIR = "logs"
 os.makedirs(LOG_DIR, exist_ok=True)
 
-# Today's date
 today = datetime.now().strftime("%Y-%m-%d")
 
-# Log file names
 application_log = os.path.join(LOG_DIR, f"application_{today}.log")
 exception_log = os.path.join(LOG_DIR, f"exception_{today}.log")
 

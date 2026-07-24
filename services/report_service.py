@@ -22,11 +22,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# ==========================================================
-# Employee Report
-# ==========================================================
-
 def employee_report():
 
     session = get_session()
@@ -74,11 +69,6 @@ def employee_report():
 
         session.close()
 
-
-# ==========================================================
-# Department Report
-# ==========================================================
-
 def department_report():
 
     session = get_session()
@@ -110,11 +100,6 @@ def department_report():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Project Report
-# ==========================================================
 
 def project_report():
 
@@ -162,11 +147,6 @@ def project_report():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Payroll Report
-# ==========================================================
 
 def payroll_report():
 
@@ -216,11 +196,6 @@ def payroll_report():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Dashboard Report
-# ==========================================================
 
 def dashboard_report():
 

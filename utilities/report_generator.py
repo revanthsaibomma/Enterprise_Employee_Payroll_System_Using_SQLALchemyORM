@@ -7,11 +7,6 @@ Description : Displays reports in table format
 
 from tabulate import tabulate
 
-
-# ==========================================================
-# Display Table
-# ==========================================================
-
 def display_table(records, headers):
 
     if not records:
@@ -35,11 +30,6 @@ def display_table(records, headers):
         )
 
     )
-
-
-# ==========================================================
-# Print Heading
-# ==========================================================
 
 def print_heading(title):
 

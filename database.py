@@ -21,15 +21,7 @@ DATABASE = "employee_payroll_db"
 DATABASE_URL = ("mysql+pymysql://root:Revanth%40123@localhost:3006/employee_payroll_db"
 )
 
-# ==========================================================
-# Create SQLAlchemy Base
-# ==========================================================
-
 Base = declarative_base()
-
-# ==========================================================
-# Create Engine
-# ==========================================================
 
 try:
 
@@ -67,10 +59,6 @@ finally:
 
     print("\nDatabase Engine Initialization Completed.")
 
-# ==========================================================
-# Create Session Factory
-# ==========================================================
-
 try:
 
     SessionLocal = sessionmaker(
@@ -106,10 +94,6 @@ except Exception as error:
 finally:
 
     print("\nSession Factory Initialization Completed.")
-
-# ==========================================================
-# Return Database Session
-# ==========================================================
 
 
 def get_session():

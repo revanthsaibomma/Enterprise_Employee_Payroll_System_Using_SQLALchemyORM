@@ -28,10 +28,6 @@ from exceptions.custom_exception import (
 )
 
 
-# ==========================================================
-# Mark Attendance
-# ==========================================================
-
 def mark_attendance():
 
     session = get_session()
@@ -94,11 +90,6 @@ def mark_attendance():
 
         session.close()
 
-
-# ==========================================================
-# Search Attendance
-# ==========================================================
-
 def search_attendance():
 
     session = get_session()
@@ -151,11 +142,6 @@ def search_attendance():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Update Attendance
-# ==========================================================
 
 def update_attendance():
 
@@ -212,11 +198,6 @@ def update_attendance():
 
         session.close()
 
-
-# ==========================================================
-# Delete Attendance
-# ==========================================================
-
 def delete_attendance():
 
     session = get_session()
@@ -257,11 +238,6 @@ def delete_attendance():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Display All Attendance
-# ==========================================================
 
 def display_all_attendance():
 

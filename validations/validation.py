@@ -12,11 +12,6 @@ from datetime import datetime
 
 from exceptions.custom_exception import ValidationException
 
-
-# ==========================================================
-# Common Validation Functions
-# ==========================================================
-
 def validate_required(value, field_name):
     """
     Validates empty input.
@@ -29,11 +24,6 @@ def validate_required(value, field_name):
         )
 
     return True
-
-
-# ==========================================================
-# Employee Validation
-# ==========================================================
 
 def validate_employee_id(employee_id):
     """
@@ -126,11 +116,6 @@ def validate_phone(phone):
 
     return phone
 
-
-# ==========================================================
-# Department Validation
-# ==========================================================
-
 def validate_department_name(name):
 
     validate_required(name, "Department Name")
@@ -142,11 +127,6 @@ def validate_department_name(name):
         )
 
     return name.title()
-
-
-# ==========================================================
-# Role Validation
-# ==========================================================
 
 def validate_role_name(role):
 
@@ -175,11 +155,6 @@ def validate_salary_grade(grade):
             "Salary grade must be numeric."
         )
 
-
-# ==========================================================
-# Attendance Validation
-# ==========================================================
-
 def validate_attendance_status(status):
 
     status = status.upper()
@@ -201,11 +176,6 @@ def validate_attendance_status(status):
 
     return status
 
-
-# ==========================================================
-# Leave Validation
-# ==========================================================
-
 def validate_leave_days(days):
 
     try:
@@ -225,11 +195,6 @@ def validate_leave_days(days):
         raise ValidationException(
             "Leave days must be numeric."
         )
-
-
-# ==========================================================
-# Project Validation
-# ==========================================================
 
 def validate_project_name(project_name):
 
@@ -266,11 +231,6 @@ def validate_project_budget(budget):
         raise ValidationException(
             "Budget should be numeric."
         )
-
-
-# ==========================================================
-# Payroll Validation
-# ==========================================================
 
 def validate_salary(amount):
 
@@ -314,11 +274,6 @@ def validate_percentage(value):
             "Percentage must be numeric."
         )
 
-
-# ==========================================================
-# Date Validation
-# ==========================================================
-
 def validate_date(date_string):
 
     try:
@@ -335,11 +290,6 @@ def validate_date(date_string):
             "YYYY-MM-DD format."
         )
 
-
-# ==========================================================
-# Yes / No Validation
-# ==========================================================
-
 def validate_yes_no(choice):
 
     choice = choice.upper()
@@ -351,11 +301,6 @@ def validate_yes_no(choice):
         )
 
     return choice
-
-
-# ==========================================================
-# Menu Choice Validation
-# ==========================================================
 
 def validate_menu_choice(choice, minimum, maximum):
 

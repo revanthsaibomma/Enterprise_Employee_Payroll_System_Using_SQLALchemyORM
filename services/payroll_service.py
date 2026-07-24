@@ -24,11 +24,6 @@ from exceptions.custom_exception import (
     ValidationException
 )
 
-
-# ==========================================================
-# Generate Payroll
-# ==========================================================
-
 def generate_payroll():
 
     session = get_session()
@@ -97,11 +92,6 @@ def generate_payroll():
 
         session.close()
 
-
-# ==========================================================
-# Search Payroll
-# ==========================================================
-
 def search_payroll():
 
     session = get_session()
@@ -145,11 +135,6 @@ def search_payroll():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Update Payroll
-# ==========================================================
 
 def update_payroll():
 
@@ -218,11 +203,6 @@ def update_payroll():
 
         session.close()
 
-
-# ==========================================================
-# Delete Payroll
-# ==========================================================
-
 def delete_payroll():
 
     session = get_session()
@@ -263,11 +243,6 @@ def delete_payroll():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Display All Payroll Records
-# ==========================================================
 
 def display_all_payrolls():
 

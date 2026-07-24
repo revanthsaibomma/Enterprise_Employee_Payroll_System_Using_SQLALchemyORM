@@ -14,10 +14,6 @@ from database import (
     engine
 )
 
-# ==========================================================
-# Import All ORM Models
-# ==========================================================
-
 from models.department_model import Department
 from models.role_model import Role
 from models.employee_model import Employee
@@ -28,11 +24,6 @@ from models.employee_project_model import EmployeeProject
 from models.task_model import Task
 from models.salary_model import Salary
 from models.payroll_model import Payroll
-
-
-# ==========================================================
-# Create Database Tables
-# ==========================================================
 
 def create_tables():
     """
@@ -71,11 +62,6 @@ def create_tables():
 
         print("\nDatabase Initialization Completed.")
 
-# ==========================================================
-# Drop Database Tables
-# ==========================================================
-
-
 def drop_tables():
     """
     Drops all tables.
@@ -113,11 +99,6 @@ def drop_tables():
 
         print("\nDrop Table Operation Completed.")
 
-# ==========================================================
-# Recreate Tables
-# ==========================================================
-
-
 def recreate_tables():
     """
     Drops all existing tables and recreates them.
@@ -136,10 +117,6 @@ def recreate_tables():
         print("\nDatabase Recreation Failed.")
 
         print(error)
-
-# ==========================================================
-# Entry Point
-# ==========================================================
 
 if __name__ == "__main__":
 

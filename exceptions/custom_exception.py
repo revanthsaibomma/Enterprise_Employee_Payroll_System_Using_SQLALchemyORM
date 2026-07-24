@@ -7,11 +7,6 @@ Description : Custom Exception Classes
 ==========================================================
 """
 
-
-# ==========================================================
-# Base Exception
-# ==========================================================
-
 class EmployeePayrollException(Exception):
     """
     Base Exception Class
@@ -27,22 +22,12 @@ class EmployeePayrollException(Exception):
 
         return self.message
 
-
-# ==========================================================
-# Validation Exception
-# ==========================================================
-
 class ValidationException(EmployeePayrollException):
     """
     Raised when validation fails.
     """
 
     pass
-
-
-# ==========================================================
-# Database Exception
-# ==========================================================
 
 class DatabaseException(EmployeePayrollException):
     """
@@ -51,22 +36,12 @@ class DatabaseException(EmployeePayrollException):
 
     pass
 
-
-# ==========================================================
-# Employee Exception
-# ==========================================================
-
 class EmployeeException(EmployeePayrollException):
     """
     Raised for Employee related errors.
     """
 
     pass
-
-
-# ==========================================================
-# Department Exception
-# ==========================================================
 
 class DepartmentException(EmployeePayrollException):
     """
@@ -75,22 +50,12 @@ class DepartmentException(EmployeePayrollException):
 
     pass
 
-
-# ==========================================================
-# Role Exception
-# ==========================================================
-
 class RoleException(EmployeePayrollException):
     """
     Raised for Role related errors.
     """
 
     pass
-
-
-# ==========================================================
-# Attendance Exception
-# ==========================================================
 
 class AttendanceException(EmployeePayrollException):
     """
@@ -99,22 +64,12 @@ class AttendanceException(EmployeePayrollException):
 
     pass
 
-
-# ==========================================================
-# Leave Exception
-# ==========================================================
-
 class LeaveException(EmployeePayrollException):
     """
     Raised for Leave related errors.
     """
 
     pass
-
-
-# ==========================================================
-# Project Exception
-# ==========================================================
 
 class ProjectException(EmployeePayrollException):
     """
@@ -123,22 +78,12 @@ class ProjectException(EmployeePayrollException):
 
     pass
 
-
-# ==========================================================
-# Task Exception
-# ==========================================================
-
 class TaskException(EmployeePayrollException):
     """
     Raised for Task related errors.
     """
 
     pass
-
-
-# ==========================================================
-# Salary Exception
-# ==========================================================
 
 class SalaryException(EmployeePayrollException):
     """
@@ -147,22 +92,12 @@ class SalaryException(EmployeePayrollException):
 
     pass
 
-
-# ==========================================================
-# Payroll Exception
-# ==========================================================
-
 class PayrollException(EmployeePayrollException):
     """
     Raised for Payroll related errors.
     """
 
     pass
-
-
-# ==========================================================
-# Report Exception
-# ==========================================================
 
 class ReportException(EmployeePayrollException):
     """
@@ -171,22 +106,12 @@ class ReportException(EmployeePayrollException):
 
     pass
 
-
-# ==========================================================
-# Duplicate Record Exception
-# ==========================================================
-
 class DuplicateRecordException(EmployeePayrollException):
     """
     Raised when duplicate records are found.
     """
 
     pass
-
-
-# ==========================================================
-# Record Not Found Exception
-# ==========================================================
 
 class RecordNotFoundException(EmployeePayrollException):
     """
@@ -195,22 +120,12 @@ class RecordNotFoundException(EmployeePayrollException):
 
     pass
 
-
-# ==========================================================
-# Authentication Exception
-# ==========================================================
-
 class AuthenticationException(EmployeePayrollException):
     """
     Raised for authentication failures.
     """
 
     pass
-
-
-# ==========================================================
-# Authorization Exception
-# ==========================================================
 
 class AuthorizationException(EmployeePayrollException):
     """

@@ -23,11 +23,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# ==========================================================
-# Add Department
-# ==========================================================
-
 def add_department():
 
     session = get_session()
@@ -80,11 +75,6 @@ def add_department():
 
         session.close()
 
-
-# ==========================================================
-# Search Department
-# ==========================================================
-
 def search_department():
 
     session = get_session()
@@ -127,11 +117,6 @@ def search_department():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Update Department
-# ==========================================================
 
 def update_department():
 
@@ -192,11 +177,6 @@ def update_department():
 
         session.close()
 
-
-# ==========================================================
-# Delete Department
-# ==========================================================
-
 def delete_department():
 
     session = get_session()
@@ -241,11 +221,6 @@ def delete_department():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Display All Departments
-# ==========================================================
 
 def display_all_departments():
 

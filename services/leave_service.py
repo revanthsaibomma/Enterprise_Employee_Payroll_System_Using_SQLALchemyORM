@@ -27,11 +27,6 @@ from exceptions.custom_exception import (
     ValidationException
 )
 
-
-# ==========================================================
-# Apply Leave
-# ==========================================================
-
 def apply_leave():
 
     session = get_session()
@@ -100,11 +95,6 @@ def apply_leave():
 
         session.close()
 
-
-# ==========================================================
-# Search Leave
-# ==========================================================
-
 def search_leave():
 
     session = get_session()
@@ -151,11 +141,6 @@ def search_leave():
 
         session.close()
 
-
-# ==========================================================
-# Update Leave Status
-# ==========================================================
-
 def update_leave_status():
 
     session = get_session()
@@ -199,11 +184,6 @@ def update_leave_status():
 
         session.close()
 
-
-# ==========================================================
-# Delete Leave
-# ==========================================================
-
 def delete_leave():
 
     session = get_session()
@@ -244,11 +224,6 @@ def delete_leave():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Display All Leave Requests
-# ==========================================================
 
 def display_all_leaves():
 

@@ -7,13 +7,8 @@ Description : Main Program
 ==========================================================
 """
 
-# ==========================================================
-# Import Modules
-# ==========================================================
-
 from database_initializer import create_tables
 
-# Employee Services
 from services.employee_service import (
     add_employee,
     search_employee,
@@ -22,7 +17,6 @@ from services.employee_service import (
     display_all_employees
 )
 
-# Department Services
 from services.department_service import (
     add_department,
     search_department,
@@ -31,7 +25,6 @@ from services.department_service import (
     display_all_departments
 )
 
-# Report Services
 from services.report_service import (
     employee_report,
     department_report,
@@ -40,8 +33,6 @@ from services.report_service import (
     dashboard_report
 )
 
-
-# Attendance Services
 from services.attendance_service import (
     mark_attendance,
     search_attendance,
@@ -50,7 +41,6 @@ from services.attendance_service import (
     display_all_attendance
 )
 
-# Leave Services
 from services.leave_service import (
     apply_leave,
     search_leave,
@@ -59,7 +49,6 @@ from services.leave_service import (
     display_all_leaves
 )
 
-# Project Services
 from services.project_service import (
     add_project,
     search_project,
@@ -68,7 +57,6 @@ from services.project_service import (
     display_all_projects
 )
 
-# Payroll Services
 from services.payroll_service import (
     generate_payroll,
     search_payroll,
@@ -76,10 +64,6 @@ from services.payroll_service import (
     delete_payroll,
     display_all_payrolls
 )
-
-# ==========================================================
-# Employee Menu
-# ==========================================================
 
 def employee_menu():
 
@@ -127,11 +111,6 @@ def employee_menu():
 
             print("Invalid Choice.")
 
-
-# ==========================================================
-# Department Menu
-# ==========================================================
-
 def department_menu():
 
     while True:
@@ -178,17 +157,7 @@ def department_menu():
 
             print("Invalid Choice.")
 
-
-# ==========================================================
-# Initialize Database
-# ==========================================================
-
 create_tables()
-
-
-# ==========================================================
-# Attendance Menu
-# ==========================================================
 
 def attendance_menu():
 
@@ -236,11 +205,6 @@ def attendance_menu():
 
             print("Invalid Choice.")
 
-
-# ==========================================================
-# Leave Menu
-# ==========================================================
-
 def leave_menu():
 
     while True:
@@ -286,11 +250,6 @@ def leave_menu():
         else:
 
             print("Invalid Choice.")
-
-
-# ==========================================================
-# Project Menu
-# ==========================================================
 
 def project_menu():
 
@@ -338,11 +297,6 @@ def project_menu():
 
             print("Invalid Choice.")
 
-
-# ==========================================================
-# Payroll Menu
-# ==========================================================
-
 def payroll_menu():
 
     while True:
@@ -389,10 +343,6 @@ def payroll_menu():
 
             print("Invalid Choice.")
 
-# ==========================================================
-# Report Menu
-# ==========================================================
-
 def report_menu():
 
     while True:
@@ -438,11 +388,6 @@ def report_menu():
         else:
 
             print("Invalid Choice.")
-
-
-# ==========================================================
-# Main Menu
-# ==========================================================
 
 def main():
 
@@ -500,11 +445,6 @@ def main():
         else:
 
             print("Invalid Choice. Please Try Again.")
-
-
-# ==========================================================
-# Driver Code
-# ==========================================================
 
 if __name__ == "__main__":
 

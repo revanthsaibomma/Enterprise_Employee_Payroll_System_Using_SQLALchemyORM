@@ -27,11 +27,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# ==========================================================
-# Add Project
-# ==========================================================
-
 def add_project():
 
     session = get_session()
@@ -100,11 +95,6 @@ def add_project():
 
         session.close()
 
-
-# ==========================================================
-# Search Project
-# ==========================================================
-
 def search_project():
 
     session = get_session()
@@ -147,11 +137,6 @@ def search_project():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Update Project
-# ==========================================================
 
 def update_project():
 
@@ -222,11 +207,6 @@ def update_project():
 
         session.close()
 
-
-# ==========================================================
-# Delete Project
-# ==========================================================
-
 def delete_project():
 
     session = get_session()
@@ -269,11 +249,6 @@ def delete_project():
     finally:
 
         session.close()
-
-
-# ==========================================================
-# Display All Projects
-# ==========================================================
 
 def display_all_projects():
 
