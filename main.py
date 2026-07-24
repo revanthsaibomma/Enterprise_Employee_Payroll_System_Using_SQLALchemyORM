@@ -1,11 +1,3 @@
-"""
-==========================================================
-File        : main.py
-Project     : Enterprise Employee Project and Payroll
-              Management System
-Description : Main Program
-==========================================================
-"""
 
 from database_initializer import create_tables
 

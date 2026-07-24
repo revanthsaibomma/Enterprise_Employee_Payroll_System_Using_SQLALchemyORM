@@ -1,11 +1,3 @@
-"""
-==========================================================
-File        : validation.py
-Project     : Enterprise Employee Project and Payroll
-              Management System
-Description : Validation functions for all modules
-==========================================================
-"""
 
 import re
 from datetime import datetime

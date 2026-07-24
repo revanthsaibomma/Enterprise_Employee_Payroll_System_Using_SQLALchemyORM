@@ -1,9 +1,3 @@
-"""
-==========================================================
-File        : report_generator.py
-Description : Displays reports in table format
-==========================================================
-"""
 
 from tabulate import tabulate
 

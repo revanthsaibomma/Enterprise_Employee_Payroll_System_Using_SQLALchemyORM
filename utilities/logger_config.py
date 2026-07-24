@@ -26,7 +26,6 @@ def application(message):
 
     logger.info(message)
 
-
 def exception(message):
 
     logger = logging.getLogger("exception_logger")

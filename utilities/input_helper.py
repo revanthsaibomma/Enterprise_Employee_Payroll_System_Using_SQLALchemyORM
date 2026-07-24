@@ -1,10 +1,3 @@
-"""
-==========================================================
-File        : input_helper.py
-Description : Common Input Functions
-==========================================================
-"""
-
 
 def get_integer(message):
 
