@@ -94,7 +94,7 @@ Enterprise_Employee_Payroll_System/
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Enterprise_Employee_Payroll_System_Using_SQLAlchemyORM.git
+git clone https://github.com/your-username/Enterprise_Employee_Payroll_System_Using_SQLAlchemyORM
 ```
 
 ```bash
