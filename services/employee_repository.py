@@ -1,11 +1,3 @@
-"""
-==========================================================
-File        : employee_service.py
-Project     : Enterprise Employee Project and Payroll
-              Management System
-Description : Employee Service Module
-==========================================================
-"""
 
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
@@ -25,7 +17,7 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-def add_employee():
+def add_employee(name, age, email, phone):
 
     session = get_session()
 
@@ -70,7 +62,7 @@ def add_employee():
 
         session.close()
 
-def search_employee():
+def search_employee(employee_id):
 
     session = get_session()
 
@@ -102,7 +94,7 @@ def search_employee():
 
         session.close()
 
-def update_employee():
+def update_employee(employee_id, name, age):
 
     session = get_session()
 
@@ -139,7 +131,7 @@ def update_employee():
 
         session.close()
 
-def delete_employee():
+def delete_employee(employee_id):
 
     session = get_session()
 
