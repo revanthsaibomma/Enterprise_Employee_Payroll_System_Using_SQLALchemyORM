@@ -112,13 +112,12 @@ def display_all_employees_api():
 
         return employees
 
-    except SQLAlchemyError as e:
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise
 
-        exception(str(e))
-
-        raise DatabaseException(
-            "Database Error."
-        )
+    
 
     finally:
 
