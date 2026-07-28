@@ -1,7 +1,7 @@
 
 from database_initializer import create_tables
 
-from services.employee_service import (
+from services.employee_repository import (
     add_employee,
     search_employee,
     update_employee,
@@ -9,7 +9,7 @@ from services.employee_service import (
     display_all_employees
 )
 
-from services.department_service import (
+from services.department_repository import (
     add_department,
     search_department,
     update_department,
@@ -17,7 +17,7 @@ from services.department_service import (
     display_all_departments
 )
 
-from services.report_service import (
+from services.report_repository import (
     employee_report,
     department_report,
     project_report,
@@ -25,7 +25,7 @@ from services.report_service import (
     dashboard_report
 )
 
-from services.attendance_service import (
+from services.attendance_repository import (
     mark_attendance,
     search_attendance,
     update_attendance,
@@ -33,7 +33,7 @@ from services.attendance_service import (
     display_all_attendance
 )
 
-from services.leave_service import (
+from services.leave_repository import (
     apply_leave,
     search_leave,
     update_leave_status,
@@ -41,7 +41,7 @@ from services.leave_service import (
     display_all_leaves
 )
 
-from services.project_service import (
+from services.project_repository import (
     add_project,
     search_project,
     update_project,
@@ -49,7 +49,7 @@ from services.project_service import (
     display_all_projects
 )
 
-from services.payroll_service import (
+from services.payroll_repository import (
     generate_payroll,
     search_payroll,
     update_payroll,

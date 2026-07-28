@@ -1,192 +1,139 @@
-# Enterprise Employee Payroll System Using SQLAlchemy ORM
+# Enterprise Employee Payroll Management System
 
-## 📌 Project Overview
-
-The **Enterprise Employee Payroll System Using SQLAlchemy ORM** is a Python-based console application developed to automate employee and payroll management within an organization. The project uses **SQLAlchemy ORM** for database operations and **MySQL** as the backend database.
-
-The system follows a modular architecture with separate layers for models, services, validations, exceptions, utilities, and logging, making it easy to maintain and extend.
+A RESTful Employee Payroll Management System developed using **Python**, **FastAPI**, **SQLAlchemy ORM**, and **MySQL**. The application manages employees, departments, attendance, leave, projects, payroll, and reports through a Swagger-documented REST API.
 
 ---
 
-## 🚀 Features
+## Features
 
-- Employee Management (CRUD)
-- Department Management (CRUD)
-- Role Management
+- Employee Management
+- Department Management
 - Attendance Management
 - Leave Management
 - Project Management
-- Employee Project Assignment
-- Task Management
-- Salary Management
-- Payroll Generation
+- Payroll Management
 - Dashboard Reports
-- Data Validation
+- REST API using FastAPI
+- Interactive Swagger Documentation
+- SQLAlchemy ORM
+- MySQL Database
+- Input Validation
 - Custom Exception Handling
-- Daily Log File Generation
-- SQLAlchemy ORM Integration
-- MySQL Database Connectivity
+- Logging Support
 
 ---
 
-## 🛠️ Technologies Used
+## Technology Stack
 
-- Python 3.12+
+- Python 3.x
+- FastAPI
 - SQLAlchemy ORM
 - MySQL
+- Pydantic
+- Uvicorn
 - PyMySQL
-- Tabulate
-- Object-Oriented Programming (OOP)
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
-Enterprise_Employee_Payroll_System/
+Enterprise_Employee_Payroll_System
+│
+├── app.py
+├── database.py
+├── database_initializer.py
 │
 ├── models/
 │   ├── employee_model.py
 │   ├── department_model.py
-│   ├── role_model.py
 │   ├── attendance_model.py
 │   ├── leave_model.py
 │   ├── project_model.py
-│   ├── employee_project_model.py
-│   ├── task_model.py
+│   ├── payroll_model.py
 │   ├── salary_model.py
-│   └── payroll_model.py
+│   ├── task_model.py
+│   └── role_model.py
+│
+├── routers/
+│   ├── employee_router.py
+│   ├── department_router.py
+│   ├── attendance_router.py
+│   ├── leave_router.py
+│   ├── project_router.py
+│   ├── payroll_router.py
+│   └── report_router.py
 │
 ├── services/
-│   ├── employee_service.py
-│   ├── department_service.py
-│   ├── attendance_service.py
-│   ├── leave_service.py
-│   ├── project_service.py
-│   ├── payroll_service.py
-│   └── report_service.py
+│   ├── employee_api_service.py
+│   ├── department_api_service.py
+│   ├── attendance_api_service.py
+│   ├── leave_api_service.py
+│   ├── project_api_service.py
+│   ├── payroll_api_service.py
+│   └── report_api_service.py
+│
+├── schemas/
+│   ├── employee_schema.py
+│   ├── department_schema.py
+│   ├── attendance_schema.py
+│   ├── leave_schema.py
+│   ├── project_schema.py
+│   └── payroll_schema.py
 │
 ├── validations/
-│   └── validation.py
-│
 ├── exceptions/
-│   └── custom_exception.py
-│
 ├── utilities/
-│   ├── logger_config.py
-│   ├── input_helper.py
-│   ├── report_generator.py
-│   └── menu_helper.py
-│
-├── logs/
-│
-├── database.py
-├── database_initializer.py
-├── main.py
-├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+## Modules
 
-### Clone the Repository
+### Employee
+- Add Employee
+- Search Employee
+- Update Employee
+- Delete Employee
+- Display All Employees
 
-```bash
-git clone https://github.com/your-username/Enterprise_Employee_Payroll_System_Using_SQLAlchemyORM
-```
+### Department
+- Add Department
+- Search Department
+- Update Department
+- Delete Department
+- Display All Departments
 
-```bash
-cd Enterprise_Employee_Payroll_System_Using_SQLAlchemyORM
-```
+### Attendance
+- Mark Attendance
+- Search Attendance
+- Update Attendance
+- Delete Attendance
+- Display All Attendance Records
 
----
+### Leave
+- Apply Leave
+- Search Leave
+- Update Leave Status
+- Delete Leave
+- Display All Leave Records
 
-### Install Dependencies
+### Project
+- Add Project
+- Search Project
+- Update Project
+- Delete Project
+- Display All Projects
 
-```bash
-pip install -r requirements.txt
-```
+### Payroll
+- Generate Payroll
+- Search Payroll
+- Update Payroll
+- Delete Payroll
+- Display All Payroll Records
 
----
-
-## 🗄️ Create MySQL Database
-
-Login to MySQL and create the database.
-
-```sql
-CREATE DATABASE employee_payroll_db;
-```
-
----
-
-## ⚙️ Configure Database
-
-Update **database.py**
-
-```python
-DATABASE_URL = "mysql+pymysql://root:YOUR_PASSWORD@localhost:3306/employee_payroll_db"
-```
-
-> If your password contains special characters like `@`, replace it with `%40`.
-
-Example:
-
-```python
-DATABASE_URL = "mysql+pymysql://root:Password%40123@localhost:3306/employee_payroll_db"
-```
-
----
-
-## ▶️ Run the Project
-
-```bash
-python main.py
-```
-
----
-
-## 📊 Database Tables
-
-The project automatically creates the following tables:
-
-- Departments
-- Roles
-- Employees
-- Attendance
-- Leave Requests
-- Projects
-- Employee Projects
-- Tasks
-- Salary Details
-- Payroll
-
----
-
-## 📋 Main Menu
-
-```
-==========================================
-EMPLOYEE PAYROLL MANAGEMENT SYSTEM
-==========================================
-
-1. Employee Management
-2. Department Management
-3. Attendance Management
-4. Leave Management
-5. Project Management
-6. Payroll Management
-7. Reports
-8. Exit
-```
-
----
-
-## 📑 Reports
-
-The application provides:
-
+### Reports
 - Employee Report
 - Department Report
 - Project Report
@@ -195,74 +142,205 @@ The application provides:
 
 ---
 
-## 📝 Logging
+## Installation
 
-Daily log files are generated automatically.
+Clone the repository:
 
+```bash
+git clone https://github.com/<your-username>/Enterprise_Employee_Payroll_System.git
 ```
-logs/
 
-application_YYYY-MM-DD.log
-exception_YYYY-MM-DD.log
+Move into the project directory:
+
+```bash
+cd Enterprise_Employee_Payroll_System
 ```
+
+Install dependencies:
+
+```bash
+pip install fastapi uvicorn sqlalchemy pymysql pydantic email-validator
+```
+
+---
+
+## Configure Database
+
+Update the MySQL connection details in `database.py`.
 
 Example:
 
+```python
+DATABASE_URL = "mysql+pymysql://root:password@localhost/payroll_db"
 ```
-application_2026-07-23.log
-exception_2026-07-23.log
+
+Replace:
+
+- root
+- password
+- payroll_db
+
+with your database credentials.
+
+---
+
+## Run the Application
+
+Start the FastAPI server:
+
+```bash
+uvicorn app:app --reload
+```
+
+Server:
+
+```
+http://127.0.0.1:8000
+```
+
+Swagger Documentation:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+ReDoc Documentation:
+
+```
+http://127.0.0.1:8000/redoc
 ```
 
 ---
 
-## ✅ Validation Features
+## API Endpoints
 
-- Employee Name Validation
-- Email Validation
-- Phone Validation
-- Salary Validation
-- Department Validation
-- Project Budget Validation
-- Attendance Validation
-- Leave Validation
+### Employee
+
+| Method | Endpoint |
+|---------|----------|
+| POST | `/employees/` |
+| GET | `/employees/` |
+| GET | `/employees/{employee_id}` |
+| PUT | `/employees/{employee_id}` |
+| DELETE | `/employees/{employee_id}` |
+
+### Department
+
+| Method | Endpoint |
+|---------|----------|
+| POST | `/departments/` |
+| GET | `/departments/` |
+| GET | `/departments/{department_id}` |
+| PUT | `/departments/{department_id}` |
+| DELETE | `/departments/{department_id}` |
+
+### Attendance
+
+| Method | Endpoint |
+|---------|----------|
+| POST | `/attendance/` |
+| GET | `/attendance/` |
+| GET | `/attendance/{employee_id}` |
+| PUT | `/attendance/{attendance_id}` |
+| DELETE | `/attendance/{attendance_id}` |
+
+### Leave
+
+| Method | Endpoint |
+|---------|----------|
+| POST | `/leaves/` |
+| GET | `/leaves/` |
+| GET | `/leaves/{employee_id}` |
+| PUT | `/leaves/{leave_id}` |
+| DELETE | `/leaves/{leave_id}` |
+
+### Project
+
+| Method | Endpoint |
+|---------|----------|
+| POST | `/projects/` |
+| GET | `/projects/` |
+| GET | `/projects/{project_id}` |
+| PUT | `/projects/{project_id}` |
+| DELETE | `/projects/{project_id}` |
+
+### Payroll
+
+| Method | Endpoint |
+|---------|----------|
+| POST | `/payrolls/` |
+| GET | `/payrolls/` |
+| GET | `/payrolls/{employee_id}` |
+| PUT | `/payrolls/{payroll_id}` |
+| DELETE | `/payrolls/{payroll_id}` |
+
+### Reports
+
+| Method | Endpoint |
+|---------|----------|
+| GET | `/reports/employees` |
+| GET | `/reports/departments` |
+| GET | `/reports/projects` |
+| GET | `/reports/payrolls` |
+| GET | `/reports/dashboard` |
 
 ---
 
-## ⚠️ Exception Handling
+## Architecture
 
-The project includes custom exceptions for:
-
-- Employee
-- Department
-- Attendance
-- Leave
-- Project
-- Payroll
-- Validation
-- Database
-- Duplicate Records
-- Record Not Found
+```
+Client (Browser / Postman / Swagger)
+              │
+              ▼
+          FastAPI Router
+              │
+              ▼
+       Pydantic Schemas
+              │
+              ▼
+      Service Layer (Business Logic)
+              │
+              ▼
+    SQLAlchemy ORM Models
+              │
+              ▼
+         MySQL Database
+```
 
 ---
 
-## 📌 Future Enhancements
+## Key Features
 
-- Graphical User Interface (GUI)
-- Web Application using Flask or Django
-- Authentication & Authorization
+- Modular Architecture
+- RESTful API Design
+- Input Validation
+- Exception Handling
+- SQLAlchemy ORM
+- Swagger API Documentation
+- Layered Project Structure
+- Easy to Extend and Maintain
+
+---
+
+## Future Enhancements
+
+- JWT Authentication
+- Role-Based Access Control (RBAC)
 - Email Notifications
-- REST API Integration
-- PDF Report Generation
-- Cloud Database Deployment
+- PDF Payroll Reports
+- Excel Report Export
+- Docker Deployment
+- Unit Testing
+- CI/CD Integration
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Revanth Sai Bomma**
 
 ---
 
-## 📄 License
+## License
 
-This project is developed for educational and learning purposes.
+This project is intended for educational and learning purposes.
