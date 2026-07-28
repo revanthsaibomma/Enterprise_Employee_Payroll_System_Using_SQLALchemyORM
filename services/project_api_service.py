@@ -28,11 +28,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# =====================================================
-# Add Project
-# =====================================================
-
 def add_project_api(
     project_name,
     project_budget,
@@ -99,11 +94,6 @@ def add_project_api(
 
         session.close()
 
-
-# =====================================================
-# Search Project
-# =====================================================
-
 def search_project_api(project_id):
 
     session = get_session()
@@ -134,11 +124,6 @@ def search_project_api(project_id):
     finally:
 
         session.close()
-
-
-# =====================================================
-# Update Project
-# =====================================================
 
 def update_project_api(
     project_id,
@@ -202,11 +187,6 @@ def update_project_api(
 
         session.close()
 
-
-# =====================================================
-# Delete Project
-# =====================================================
-
 def delete_project_api(project_id):
 
     session = get_session()
@@ -250,11 +230,6 @@ def delete_project_api(project_id):
     finally:
 
         session.close()
-
-
-# =====================================================
-# Display All Projects
-# =====================================================
 
 def display_all_projects_api():
 

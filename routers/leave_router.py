@@ -37,11 +37,6 @@ router = APIRouter(
     tags=["Leaves"]
 )
 
-
-# =====================================================
-# Apply Leave
-# =====================================================
-
 @router.post(
     "/",
     status_code=status.HTTP_201_CREATED,
@@ -105,11 +100,6 @@ def apply_leave(leave: LeaveCreate):
 
         )
 
-
-# =====================================================
-# Search Leave
-# =====================================================
-
 @router.get(
     "/{employee_id}",
     summary="Search Leave"
@@ -150,11 +140,6 @@ def search_leave(employee_id: int):
 
         )
 
-
-# =====================================================
-# Display All Leaves
-# =====================================================
-
 @router.get(
     "/",
     summary="Display All Leaves"
@@ -184,11 +169,6 @@ def display_all_leaves():
             detail=str(e)
 
         )
-
-
-# =====================================================
-# Update Leave Status
-# =====================================================
 
 @router.put(
     "/{leave_id}",
@@ -243,11 +223,6 @@ def update_leave_status(
             detail=str(e)
 
         )
-
-
-# =====================================================
-# Delete Leave
-# =====================================================
 
 @router.delete(
     "/{leave_id}",

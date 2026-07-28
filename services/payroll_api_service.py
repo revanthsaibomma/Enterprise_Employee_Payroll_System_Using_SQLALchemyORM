@@ -25,11 +25,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# =====================================================
-# Generate Payroll
-# =====================================================
-
 def generate_payroll_api(
         employee_id,
         basic_salary,
@@ -112,11 +107,6 @@ def generate_payroll_api(
 
         session.close()
 
-
-# =====================================================
-# Search Payroll
-# =====================================================
-
 def search_payroll_api(employee_id):
 
     session = get_session()
@@ -152,11 +142,6 @@ def search_payroll_api(employee_id):
     finally:
 
         session.close()
-
-
-# =====================================================
-# Update Payroll
-# =====================================================
 
 def update_payroll_api(
         payroll_id,
@@ -228,11 +213,6 @@ def update_payroll_api(
 
         session.close()
 
-
-# =====================================================
-# Delete Payroll
-# =====================================================
-
 def delete_payroll_api(payroll_id):
 
     session = get_session()
@@ -278,11 +258,6 @@ def delete_payroll_api(payroll_id):
     finally:
 
         session.close()
-
-
-# =====================================================
-# Display All Payrolls
-# =====================================================
 
 def display_all_payrolls_api():
 

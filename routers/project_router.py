@@ -37,11 +37,6 @@ router = APIRouter(
     tags=["Projects"]
 )
 
-
-# =====================================================
-# Add Project
-# =====================================================
-
 @router.post(
     "/",
     status_code=status.HTTP_201_CREATED,
@@ -91,11 +86,6 @@ def add_project(project: ProjectCreate):
             detail=str(e)
         )
 
-
-# =====================================================
-# Search Project
-# =====================================================
-
 @router.get(
     "/{project_id}",
     summary="Search Project"
@@ -129,11 +119,6 @@ def search_project(project_id: int):
             detail=str(e)
         )
 
-
-# =====================================================
-# Display All Projects
-# =====================================================
-
 @router.get(
     "/",
     summary="Display All Projects"
@@ -161,11 +146,6 @@ def display_all_projects():
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e)
         )
-
-
-# =====================================================
-# Update Project
-# =====================================================
 
 @router.put(
     "/{project_id}",
@@ -225,11 +205,6 @@ def update_project(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e)
         )
-
-
-# =====================================================
-# Delete Project
-# =====================================================
 
 @router.delete(
     "/{project_id}",

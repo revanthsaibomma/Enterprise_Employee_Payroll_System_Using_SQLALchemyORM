@@ -37,11 +37,6 @@ router = APIRouter(
     tags=["Employees"]
 )
 
-
-# =====================================================
-# Add Employee
-# =====================================================
-
 @router.post(
     "/",
     status_code=status.HTTP_201_CREATED,
@@ -78,11 +73,6 @@ def add_employee(employee: EmployeeCreate):
             detail=str(e)
         )
 
-
-# =====================================================
-# Search Employee
-# =====================================================
-
 @router.get(
     "/{employee_id}",
     summary="Search Employee"
@@ -114,11 +104,6 @@ def search_employee(employee_id: int):
             detail=str(e)
         )
 
-
-# =====================================================
-# Display All Employees
-# =====================================================
-
 @router.get(
     "/",
     summary="Display All Employees"
@@ -141,11 +126,6 @@ def display_all_employees():
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e)
         )
-
-
-# =====================================================
-# Update Employee
-# =====================================================
 
 @router.put(
     "/{employee_id}",
@@ -213,11 +193,6 @@ def update_employee(
             detail=str(e)
 
         )
-
-
-# =====================================================
-# Delete Employee
-# =====================================================
 
 @router.delete(
     "/{employee_id}",

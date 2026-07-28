@@ -28,11 +28,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# =====================================================
-# Apply Leave
-# =====================================================
-
 def apply_leave_api(
         employee_id,
         leave_date,
@@ -109,11 +104,6 @@ def apply_leave_api(
 
         session.close()
 
-
-# =====================================================
-# Search Leave
-# =====================================================
-
 def search_leave_api(employee_id):
 
     session = get_session()
@@ -150,10 +140,6 @@ def search_leave_api(employee_id):
 
         session.close()
 
-
-# =====================================================
-# Update Leave Status
-# =====================================================
 
 def update_leave_status_api(
         leave_id,
@@ -201,11 +187,6 @@ def update_leave_status_api(
 
         session.close()
 
-
-# =====================================================
-# Delete Leave
-# =====================================================
-
 def delete_leave_api(leave_id):
 
     session = get_session()
@@ -251,11 +232,6 @@ def delete_leave_api(leave_id):
     finally:
 
         session.close()
-
-
-# =====================================================
-# Display All Leaves
-# =====================================================
 
 def display_all_leaves_api():
 

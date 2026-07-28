@@ -19,11 +19,6 @@ from exceptions.custom_exception import (
     ValidationException
 )
 
-
-# ==========================================
-# Mark Attendance
-# ==========================================
-
 def mark_attendance_api(
         employee_id,
         attendance_date,
@@ -95,11 +90,6 @@ def mark_attendance_api(
 
         session.close()
 
-
-# ==========================================
-# Search Attendance
-# ==========================================
-
 def search_attendance_api(employee_id):
 
     session = get_session()
@@ -135,11 +125,6 @@ def search_attendance_api(employee_id):
     finally:
 
         session.close()
-
-
-# ==========================================
-# Update Attendance
-# ==========================================
 
 def update_attendance_api(
         attendance_id,
@@ -198,11 +183,6 @@ def update_attendance_api(
 
         session.close()
 
-
-# ==========================================
-# Delete Attendance
-# ==========================================
-
 def delete_attendance_api(
         attendance_id
 ):
@@ -253,11 +233,6 @@ def delete_attendance_api(
     finally:
 
         session.close()
-
-
-# ==========================================
-# Display All Attendance
-# ==========================================
 
 def display_all_attendance_api():
 

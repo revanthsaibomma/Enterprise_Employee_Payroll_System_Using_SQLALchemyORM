@@ -37,11 +37,6 @@ router = APIRouter(
     tags=["Attendance"]
 )
 
-
-# =====================================================
-# Mark Attendance
-# =====================================================
-
 @router.post(
     "/",
     status_code=status.HTTP_201_CREATED,
@@ -103,11 +98,6 @@ def mark_attendance(attendance: AttendanceCreate):
 
         )
 
-
-# =====================================================
-# Search Attendance By Employee ID
-# =====================================================
-
 @router.get(
     "/{employee_id}",
     summary="Search Attendance"
@@ -150,11 +140,6 @@ def search_attendance(employee_id: int):
 
         )
 
-
-# =====================================================
-# Display All Attendance
-# =====================================================
-
 @router.get(
     "/",
     summary="Display All Attendance"
@@ -184,11 +169,6 @@ def display_all_attendance():
             detail=str(e)
 
         )
-
-
-# =====================================================
-# Update Attendance
-# =====================================================
 
 @router.put(
     "/{attendance_id}",
@@ -253,11 +233,6 @@ def update_attendance(
             detail=str(e)
 
         )
-
-
-# =====================================================
-# Delete Attendance
-# =====================================================
 
 @router.delete(
     "/{attendance_id}",

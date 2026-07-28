@@ -37,11 +37,6 @@ router = APIRouter(
     tags=["Payroll"]
 )
 
-
-# =====================================================
-# Generate Payroll
-# =====================================================
-
 @router.post(
     "/",
     status_code=status.HTTP_201_CREATED,
@@ -96,11 +91,6 @@ def generate_payroll(payroll: PayrollCreate):
             detail=str(e)
         )
 
-
-# =====================================================
-# Search Payroll
-# =====================================================
-
 @router.get(
     "/{employee_id}",
     summary="Search Payroll"
@@ -134,11 +124,6 @@ def search_payroll(employee_id: int):
             detail=str(e)
         )
 
-
-# =====================================================
-# Display All Payrolls
-# =====================================================
-
 @router.get(
     "/",
     summary="Display All Payrolls"
@@ -166,11 +151,6 @@ def display_all_payrolls():
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e)
         )
-
-
-# =====================================================
-# Update Payroll
-# =====================================================
 
 @router.put(
     "/{payroll_id}",
@@ -230,11 +210,6 @@ def update_payroll(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(e)
         )
-
-
-# =====================================================
-# Delete Payroll
-# =====================================================
 
 @router.delete(
     "/{payroll_id}",

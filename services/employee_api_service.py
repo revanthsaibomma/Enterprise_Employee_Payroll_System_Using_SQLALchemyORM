@@ -19,10 +19,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# -----------------------------
-# Add Employee
-# -----------------------------
 def add_employee_api(name, age, email, phone):
 
     session = get_session()
@@ -76,10 +72,6 @@ def add_employee_api(name, age, email, phone):
 
         session.close()
 
-
-# -----------------------------
-# Search Employee
-# -----------------------------
 def search_employee_api(employee_id):
 
     session = get_session()
@@ -108,10 +100,6 @@ def search_employee_api(employee_id):
 
         session.close()
 
-
-# -----------------------------
-# Display All Employees
-# -----------------------------
 def display_all_employees_api():
 
     session = get_session()
@@ -136,10 +124,6 @@ def display_all_employees_api():
 
         session.close()
 
-
-# -----------------------------
-# Update Employee
-# -----------------------------
 def update_employee_api(
         employee_id,
         name,
@@ -201,10 +185,6 @@ def update_employee_api(
 
         session.close()
 
-
-# -----------------------------
-# Delete Employee
-# -----------------------------
 def delete_employee_api(employee_id):
 
     session = get_session()

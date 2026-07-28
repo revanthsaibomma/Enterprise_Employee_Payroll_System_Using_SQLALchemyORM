@@ -23,11 +23,6 @@ from exceptions.custom_exception import (
     DatabaseException
 )
 
-
-# =====================================================
-# Employee Report
-# =====================================================
-
 def employee_report_api():
 
     session = get_session()
@@ -53,11 +48,6 @@ def employee_report_api():
     finally:
 
         session.close()
-
-
-# =====================================================
-# Department Report
-# =====================================================
 
 def department_report_api():
 
@@ -85,11 +75,6 @@ def department_report_api():
 
         session.close()
 
-
-# =====================================================
-# Project Report
-# =====================================================
-
 def project_report_api():
 
     session = get_session()
@@ -116,11 +101,6 @@ def project_report_api():
 
         session.close()
 
-
-# =====================================================
-# Payroll Report
-# =====================================================
-
 def payroll_report_api():
 
     session = get_session()
@@ -146,11 +126,6 @@ def payroll_report_api():
     finally:
 
         session.close()
-
-
-# =====================================================
-# Dashboard Report
-# =====================================================
 
 def dashboard_report_api():
 

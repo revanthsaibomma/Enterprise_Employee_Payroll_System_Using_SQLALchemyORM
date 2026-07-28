@@ -30,11 +30,6 @@ router = APIRouter(
     tags=["Reports"]
 )
 
-
-# =====================================================
-# Employee Report
-# =====================================================
-
 @router.get(
     "/employees",
     summary="Employee Report"
@@ -64,11 +59,6 @@ def employee_report():
             detail=str(e)
 
         )
-
-
-# =====================================================
-# Department Report
-# =====================================================
 
 @router.get(
     "/departments",
@@ -100,11 +90,6 @@ def department_report():
 
         )
 
-
-# =====================================================
-# Project Report
-# =====================================================
-
 @router.get(
     "/projects",
     summary="Project Report"
@@ -135,11 +120,6 @@ def project_report():
 
         )
 
-
-# =====================================================
-# Payroll Report
-# =====================================================
-
 @router.get(
     "/payrolls",
     summary="Payroll Report"
@@ -169,11 +149,6 @@ def payroll_report():
             detail=str(e)
 
         )
-
-
-# =====================================================
-# Dashboard Report
-# =====================================================
 
 @router.get(
     "/dashboard",

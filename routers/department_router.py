@@ -24,11 +24,6 @@ router = APIRouter(
     tags=["Department"]
 )
 
-
-# ==========================================
-# Add Department
-# ==========================================
-
 @router.post(
     "/",
     status_code=status.HTTP_201_CREATED
@@ -62,11 +57,6 @@ def add_department(
             detail=str(e)
         )
 
-
-# ==========================================
-# Search Department
-# ==========================================
-
 @router.get("/{department_id}")
 def search_department(
     department_id: int
@@ -87,20 +77,10 @@ def search_department(
             detail=str(e)
         )
 
-
-# ==========================================
-# Display All Departments
-# ==========================================
-
 @router.get("/")
 def display_all_departments():
 
     return display_all_departments_api()
-
-
-# ==========================================
-# Update Department
-# ==========================================
 
 @router.put("/{department_id}")
 def update_department(
@@ -150,11 +130,6 @@ def update_department(
             detail=str(e)
 
         )
-
-
-# ==========================================
-# Delete Department
-# ==========================================
 
 @router.delete("/{department_id}")
 def delete_department(
