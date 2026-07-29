@@ -1,210 +1,297 @@
 # Enterprise Employee Payroll Management System
 
-A RESTful Employee Payroll Management System developed using **Python**, **FastAPI**, **SQLAlchemy ORM**, and **MySQL**. The application manages employees, departments, attendance, leave, projects, payroll, and reports through a Swagger-documented REST API.
+An Enterprise Employee Payroll Management System developed using **FastAPI**, **Python**, **SQLAlchemy**, **MySQL**, and **Matplotlib**. The application provides employee management, attendance tracking, leave management, payroll processing, analytics dashboards, and RESTful APIs for enterprise organizations.
 
 ---
 
-## Features
+# Developer
 
-- Employee Management
-- Department Management
-- Attendance Management
-- Leave Management
-- Project Management
-- Payroll Management
-- Dashboard Reports
-- REST API using FastAPI
-- Interactive Swagger Documentation
-- SQLAlchemy ORM
-- MySQL Database
-- Input Validation
-- Custom Exception Handling
-- Logging Support
+**Revanth Sai Bomma**
 
 ---
 
-## Technology Stack
+# Features
 
-- Python 3.x
+## Employee Management
+- Add Employee
+- Update Employee
+- Delete Employee
+- View Employee Details
+- Search Employee
+- Employee Profile Management
+
+## Department Management
+- Add Department
+- Update Department
+- Delete Department
+- Department-wise Employee Count
+
+## Attendance Management
+- Daily Attendance
+- Attendance Reports
+- Attendance Summary
+
+## Leave Management
+- Apply Leave
+- Leave Approval/Rejection
+- Leave History
+- Leave Reports
+
+## Payroll Management
+- Salary Calculation
+- Bonus Calculation
+- Deduction Calculation
+- Net Salary Calculation
+- Payroll History
+- Payroll Reports
+
+## Analytics Dashboard
+- Department-wise Employee Count
+- Attendance Analysis
+- Leave Analysis
+- Salary Distribution
+- Top Paid Employees
+- Project Status Dashboard
+
+---
+
+# Technology Stack
+
+## Backend
+- Python
 - FastAPI
-- SQLAlchemy ORM
+
+## Database
 - MySQL
+- SQLAlchemy ORM
+
+## Data Validation
 - Pydantic
-- Uvicorn
-- PyMySQL
+
+## Visualization
+- Matplotlib
+
+## API Testing
+- Swagger UI
+- Postman
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
-Enterprise_Employee_Payroll_System
+Enterprise-Employee-Payroll-System/
 │
-├── app.py
-├── database.py
-├── database_initializer.py
+├── main.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── config/
+│   ├── database.py
+│   ├── settings.py
+│   └── __init__.py
 │
 ├── models/
-│   ├── employee_model.py
-│   ├── department_model.py
-│   ├── attendance_model.py
-│   ├── leave_model.py
-│   ├── project_model.py
-│   ├── payroll_model.py
-│   ├── salary_model.py
-│   ├── task_model.py
-│   └── role_model.py
-│
-├── routers/
-│   ├── employee_router.py
-│   ├── department_router.py
-│   ├── attendance_router.py
-│   ├── leave_router.py
-│   ├── project_router.py
-│   ├── payroll_router.py
-│   └── report_router.py
-│
-├── services/
-│   ├── employee_api_service.py
-│   ├── department_api_service.py
-│   ├── attendance_api_service.py
-│   ├── leave_api_service.py
-│   ├── project_api_service.py
-│   ├── payroll_api_service.py
-│   └── report_api_service.py
+│   ├── employee.py
+│   ├── department.py
+│   ├── attendance.py
+│   ├── leave.py
+│   ├── payroll.py
+│   ├── project.py
+│   └── __init__.py
 │
 ├── schemas/
 │   ├── employee_schema.py
 │   ├── department_schema.py
 │   ├── attendance_schema.py
 │   ├── leave_schema.py
+│   ├── payroll_schema.py
 │   ├── project_schema.py
-│   └── payroll_schema.py
+│   └── __init__.py
 │
-├── validations/
-├── exceptions/
-├── utilities/
-└── README.md
+├── repository/
+│   ├── employee_repository.py
+│   ├── department_repository.py
+│   ├── attendance_repository.py
+│   ├── leave_repository.py
+│   ├── payroll_repository.py
+│   ├── analytics_repository.py
+│   └── __init__.py
+│
+├── services/
+│   ├── employee_service.py
+│   ├── department_service.py
+│   ├── attendance_service.py
+│   ├── leave_service.py
+│   ├── payroll_service.py
+│   ├── analytics_api_service.py
+│   └── __init__.py
+│
+├── routers/
+│   ├── employee_router.py
+│   ├── department_router.py
+│   ├── attendance_router.py
+│   ├── leave_router.py
+│   ├── payroll_router.py
+│   ├── analytics_router.py
+│   └── __init__.py
+│
+├── visualization/
+│   ├── charts.py
+│   ├── dashboard.py
+│   └── __init__.py
+│
+├── charts/
+│   ├── department_chart.png
+│   ├── attendance_chart.png
+│   ├── leave_chart.png
+│   ├── project_chart.png
+│   ├── salary_distribution.png
+│   └── top_paid_chart.png
+│
+├── utils/
+│   ├── helpers.py
+│   ├── validators.py
+│   └── __init__.py
+│
+├── static/
+│
+├── templates/
+│
+└── tests/
+    ├── test_employee.py
+    ├── test_department.py
+    ├── test_attendance.py
+    ├── test_leave.py
+    ├── test_payroll.py
+    └── test_analytics.py
 ```
 
 ---
 
-## Modules
+# REST API Modules
 
-### Employee
-- Add Employee
-- Search Employee
-- Update Employee
-- Delete Employee
-- Display All Employees
-
-### Department
-- Add Department
-- Search Department
-- Update Department
-- Delete Department
-- Display All Departments
-
-### Attendance
-- Mark Attendance
-- Search Attendance
-- Update Attendance
-- Delete Attendance
-- Display All Attendance Records
-
-### Leave
-- Apply Leave
-- Search Leave
-- Update Leave Status
-- Delete Leave
-- Display All Leave Records
-
-### Project
-- Add Project
-- Search Project
-- Update Project
-- Delete Project
-- Display All Projects
-
-### Payroll
-- Generate Payroll
-- Search Payroll
-- Update Payroll
-- Delete Payroll
-- Display All Payroll Records
-
-### Reports
-- Employee Report
-- Department Report
-- Project Report
-- Payroll Report
-- Dashboard Report
+- Employee Management APIs
+- Department Management APIs
+- Attendance Management APIs
+- Leave Management APIs
+- Payroll Management APIs
+- Analytics Dashboard APIs
 
 ---
 
-## Installation
+# Analytics Charts
 
-Clone the repository:
+The application generates the following analytics using Matplotlib:
+
+- 📊 Department Employee Count (Bar Chart)
+- 📈 Attendance Analysis (Line Chart)
+- 🍩 Leave Status (Donut Chart)
+- 📊 Salary Distribution (Horizontal Bar Chart)
+- 📊 Top Paid Employees (Horizontal Bar Chart)
+- 📊 Project Status (Horizontal Bar Chart)
+
+---
+
+# API Endpoints
+
+## Employee
+
+- GET /employees
+- GET /employees/{id}
+- POST /employees
+- PUT /employees/{id}
+- DELETE /employees/{id}
+
+## Department
+
+- GET /departments
+- POST /departments
+- PUT /departments/{id}
+- DELETE /departments/{id}
+
+## Attendance
+
+- GET /attendance
+- POST /attendance
+
+## Leave
+
+- GET /leave
+- POST /leave
+
+## Payroll
+
+- GET /payroll
+- POST /payroll
+
+## Analytics
+
+- GET /analytics/charts/department
+- GET /analytics/charts/attendance
+- GET /analytics/charts/leave
+- GET /analytics/charts/project
+- GET /analytics/charts/salary
+- GET /analytics/charts/top-paid
+
+---
+
+# Installation
+
+## Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/Enterprise_Employee_Payroll_System.git
+git clone https://github.com/your-username/Enterprise-Employee-Payroll-System.git
 ```
 
-Move into the project directory:
+## Navigate to Project
 
 ```bash
-cd Enterprise_Employee_Payroll_System
+cd Enterprise-Employee-Payroll-System
 ```
 
-Install dependencies:
+## Create Virtual Environment
 
 ```bash
-pip install fastapi uvicorn sqlalchemy pymysql pydantic email-validator
+python -m venv venv
+```
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run the Server
+
+```bash
+uvicorn main:app --reload
 ```
 
 ---
 
-## Configure Database
+# API Documentation
 
-Update the MySQL connection details in `database.py`.
-
-Example:
-
-```python
-DATABASE_URL = "mysql+pymysql://root:password@localhost/payroll_db"
-```
-
-Replace:
-
-- root
-- password
-- payroll_db
-
-with your database credentials.
-
----
-
-## Run the Application
-
-Start the FastAPI server:
-
-```bash
-uvicorn app:app --reload
-```
-
-Server:
-
-```
-http://127.0.0.1:8000
-```
-
-Swagger Documentation:
+Swagger UI
 
 ```
 http://127.0.0.1:8000/docs
 ```
 
-ReDoc Documentation:
+ReDoc
 
 ```
 http://127.0.0.1:8000/redoc
@@ -212,135 +299,40 @@ http://127.0.0.1:8000/redoc
 
 ---
 
-## API Endpoints
-
-### Employee
-
-| Method | Endpoint |
-|---------|----------|
-| POST | `/employees/` |
-| GET | `/employees/` |
-| GET | `/employees/{employee_id}` |
-| PUT | `/employees/{employee_id}` |
-| DELETE | `/employees/{employee_id}` |
-
-### Department
-
-| Method | Endpoint |
-|---------|----------|
-| POST | `/departments/` |
-| GET | `/departments/` |
-| GET | `/departments/{department_id}` |
-| PUT | `/departments/{department_id}` |
-| DELETE | `/departments/{department_id}` |
-
-### Attendance
-
-| Method | Endpoint |
-|---------|----------|
-| POST | `/attendance/` |
-| GET | `/attendance/` |
-| GET | `/attendance/{employee_id}` |
-| PUT | `/attendance/{attendance_id}` |
-| DELETE | `/attendance/{attendance_id}` |
-
-### Leave
-
-| Method | Endpoint |
-|---------|----------|
-| POST | `/leaves/` |
-| GET | `/leaves/` |
-| GET | `/leaves/{employee_id}` |
-| PUT | `/leaves/{leave_id}` |
-| DELETE | `/leaves/{leave_id}` |
-
-### Project
-
-| Method | Endpoint |
-|---------|----------|
-| POST | `/projects/` |
-| GET | `/projects/` |
-| GET | `/projects/{project_id}` |
-| PUT | `/projects/{project_id}` |
-| DELETE | `/projects/{project_id}` |
-
-### Payroll
-
-| Method | Endpoint |
-|---------|----------|
-| POST | `/payrolls/` |
-| GET | `/payrolls/` |
-| GET | `/payrolls/{employee_id}` |
-| PUT | `/payrolls/{payroll_id}` |
-| DELETE | `/payrolls/{payroll_id}` |
-
-### Reports
-
-| Method | Endpoint |
-|---------|----------|
-| GET | `/reports/employees` |
-| GET | `/reports/departments` |
-| GET | `/reports/projects` |
-| GET | `/reports/payrolls` |
-| GET | `/reports/dashboard` |
-
----
-
-## Architecture
-
-```
-Client (Browser / Postman / Swagger)
-              │
-              ▼
-          FastAPI Router
-              │
-              ▼
-       Pydantic Schemas
-              │
-              ▼
-      Service Layer (Business Logic)
-              │
-              ▼
-    SQLAlchemy ORM Models
-              │
-              ▼
-         MySQL Database
-```
-
----
-
-## Key Features
-
-- Modular Architecture
-- RESTful API Design
-- Input Validation
-- Exception Handling
-- SQLAlchemy ORM
-- Swagger API Documentation
-- Layered Project Structure
-- Easy to Extend and Maintain
-
----
-
-## Future Enhancements
+# Future Enhancements
 
 - JWT Authentication
 - Role-Based Access Control (RBAC)
 - Email Notifications
-- PDF Payroll Reports
-- Excel Report Export
-- Docker Deployment
-- Unit Testing
-- CI/CD Integration
+- Payroll PDF Generation
+- Employee Self-Service Portal
+- Dashboard Export (PDF/Excel)
+- Performance Evaluation Module
+- Cloud Deployment
+- Docker Support
+- CI/CD Pipeline Integration
 
 ---
 
-## Author
+# Testing
+
+The project includes testing for:
+
+- Employee Module
+- Department Module
+- Attendance Module
+- Leave Module
+- Payroll Module
+- Analytics Module
+
+---
+
+# Author
 
 **Revanth Sai Bomma**
 
 ---
 
-## License
+# License
 
-This project is intended for educational and learning purposes.
+This project is developed for academic and educational purposes.
