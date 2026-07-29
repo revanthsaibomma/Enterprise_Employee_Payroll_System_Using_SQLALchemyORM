@@ -8,6 +8,15 @@ Description : Analytics Router Module
 """
 
 from fastapi import APIRouter
+from fastapi.responses import FileResponse
+from visualization.charts import (
+    department_chart,
+    attendance_chart,
+    leave_chart,
+    project_chart,
+    salary_distribution_chart,
+    top_paid_chart
+)
 
 from services.analytics_api_service import (
     dashboard_summary_api,
@@ -36,6 +45,8 @@ from schemas.analytics_schema import (
     SalaryDistributionSchema,
     ChartSchema
 )
+
+
 
 router = APIRouter(
     prefix="/analytics",
@@ -159,19 +170,90 @@ def salary_distribution():
 
     return salary_distribution_api()
 
-
 # -------------------------------------------------------
-# Dashboard Charts
+# Department Chart (Matplotlib)
 # -------------------------------------------------------
 
-@router.get(
-    "/charts",
-    response_model=list[ChartSchema]
-)
-def dashboard_charts():
+@router.get("/charts/department")
+def get_department_chart():
 
-    return dashboard_charts_api()
+    analytics = dashboard_charts_api()
 
+    department_data = analytics["department_chart"]
+
+    result = department_chart(department_data)
+
+    return FileResponse(
+        path=result["chart_path"],
+        media_type="image/png",
+        filename="department_chart.png"
+    )
+
+@router.get("/charts/attendance")
+def attendance_chart_api():
+
+    data = dashboard_charts_api()
+
+    result = attendance_chart(
+        data["attendance_chart"]
+    )
+
+    return FileResponse(
+        result["chart_path"],
+        media_type="image/png"
+    )
+
+@router.get("/charts/leave")
+def leave_chart_api():
+
+    data = dashboard_charts_api()
+
+    result = leave_chart(
+        data["leave_chart"]
+    )
+
+    return FileResponse(
+        result["chart_path"],
+        media_type="image/png"
+    )
+
+@router.get("/charts/project")
+def project_chart_api():
+
+    data = dashboard_charts_api()
+
+    result = project_chart(
+        data["project_chart"]
+    )
+
+    return FileResponse(
+        result["chart_path"],
+        media_type="image/png"
+    )
+
+@router.get("/charts/salary")
+def salary_chart_api():
+
+    data = salary_distribution_api()
+
+    result = salary_distribution_chart(data)
+
+    return FileResponse(
+        result["chart_path"],
+        media_type="image/png"
+    )
+
+@router.get("/charts/top-paid")
+def top_paid_chart_api():
+
+    data = top_paid_employees_api()
+
+    result = top_paid_chart(data)
+
+    return FileResponse(
+        result["chart_path"],
+        media_type="image/png"
+    )
 
 # -------------------------------------------------------
 # ETL Pipeline
