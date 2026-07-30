@@ -170,6 +170,110 @@ Enterprise-Employee-Payroll-System/
 
 ---
 
+# Project Pipeline
+
+The Enterprise Employee Payroll Management System follows a layered architecture to ensure modularity, scalability, and maintainability.
+
+```
+                              User
+                                │
+                                ▼
+                     Swagger UI / Postman
+                                │
+                                ▼
+                      FastAPI Router Layer
+                                │
+                                ▼
+                   Pydantic Request Validation
+                                │
+                                ▼
+                    Service (Business Logic)
+                                │
+        ┌──────────────┬──────────────┬──────────────┐
+        │              │              │              │
+        ▼              ▼              ▼              ▼
+    Employee      Attendance      Leave         Payroll
+     Service         Service      Service        Service
+                                │
+                                ▼
+                    Analytics API Service
+                                │
+                                ▼
+                     Repository / DAO Layer
+                                │
+                                ▼
+                        SQLAlchemy ORM
+                                │
+                                ▼
+                          MySQL Database
+                                │
+                                ▼
+                    Processed Business Data
+                                │
+                                ▼
+                 Matplotlib Visualization Layer
+                                │
+                                ▼
+      Bar Chart | Line Chart | Donut Chart | Horizontal Bar Chart
+                                │
+                                ▼
+                    JSON Response / PNG Charts
+                                │
+                                ▼
+                       Client / Dashboard
+```
+
+## Workflow
+
+### Step 1: User Request
+The user sends a request through **Swagger UI**, **Postman**, or another REST client.
+
+### Step 2: FastAPI Router
+The router receives the request and forwards it to the appropriate module.
+
+### Step 3: Request Validation
+Incoming request data is validated using **Pydantic** schemas to ensure correctness.
+
+### Step 4: Business Logic
+The Service Layer processes the business logic for:
+- Employee Management
+- Department Management
+- Attendance Management
+- Leave Management
+- Payroll Processing
+- Analytics
+
+### Step 5: Database Operations
+The Repository Layer communicates with the database using **SQLAlchemy ORM** to perform CRUD operations.
+
+### Step 6: Data Storage
+All enterprise data is securely stored and retrieved from the **MySQL** database.
+
+### Step 7: Analytics Processing
+The Analytics Service collects and aggregates payroll, attendance, leave, and department data to generate meaningful insights.
+
+### Step 8: Visualization
+The Visualization module uses **Matplotlib** to generate analytics charts, including:
+- Department-wise Employee Count
+- Attendance Analysis
+- Leave Status
+- Salary Distribution
+- Top Paid Employees
+- Project Status
+
+### Step 9: Response Generation
+The system returns either:
+- JSON responses for REST APIs, or
+- PNG chart images for analytics endpoints.
+
+### Step 10: Client Display
+The generated results are displayed through:
+- Swagger UI
+- REST API clients
+- Enterprise Dashboard
+
+---
+
 # REST API Modules
 
 - Employee Management APIs
